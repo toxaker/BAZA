@@ -200,4 +200,7 @@ I decided to get and collect every set up i know to provide the 99% safety. From
      @ Specify ip to be banned
 
         $IPTABLES -A INPUT -s 185.250.47.97 -j DROP
- 
+
+            
+ ### ENGLISH VERSION
+ https://github.com/toxaker/basic-infosecurence/blob/main/%5BENG%5DREADME%2Cmd

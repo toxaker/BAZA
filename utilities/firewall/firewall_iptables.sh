@@ -7,18 +7,18 @@ IPTABLES=/sbin/iptables
 $IPTABLES -F
 $IPTABLES -X
 
-# Установить политики по умолчанию: блокировать весь входящий трафик, разрешить исходящий
+# Установить значения по умолчанию: блокировать весь входящий трафик, разрешить исходящий
 $IPTABLES -P INPUT DROP
 $IPTABLES -P FORWARD DROP
 $IPTABLES -P OUTPUT ACCEPT
 
-# Разрешить локальный трафик (loopback)
+# Разрешить трафик loopback
 $IPTABLES -A INPUT -i lo -j ACCEPT
 $IPTABLES -A OUTPUT -o lo -j ACCEPT
 $IPTABLES -A INPUT -i wlan0 -j ACCEPT
 $IPTABLES -A OUTPUT -o wlan0 -j ACCEPT
 
-# Разрешить исходящий трафик через Wi-Fi и VPN интерфейсы
+# Разрешить исходящий трафик через Wi-Fi, Ethernet, VPN интерфейсы. В зависимости от вашего активного профиля
 $IPTABLES -A INPUT -i wlan0 -j ACCEPT
 $IPTABLES -A OUTPUT -o wlan0 -j ACCEPT
 $IPTABLES -A INPUT -i fi-hel-wg-002 -j ACCEPT
@@ -27,7 +27,7 @@ $IPTABLES -A INPUT -i eth0 -j ACCEPT
 $IPTABLES -A OUTPUT -o eth0 -j ACCEPT
 
 # Защита от спуфинга
-# Сбросить пакеты с локальными адресами на внешнем интерфейсе (например, eth0)
+# Сбросить пакеты с локальными адресами на внешнем интерфейсе (например, eth0, local)
 $IPTABLES -A INPUT -i wlan0 -s 127.0.0.1/8 -j DROP
 $IPTABLES -A INPUT -i wlan0 -s 10.0.0.0/8 -j DROP
 $IPTABLES -A INPUT -i wlan0 -s 192.168.0.7/24 -j DROP

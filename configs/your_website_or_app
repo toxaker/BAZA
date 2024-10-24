@@ -1,0 +1,31 @@
+server {
+    server_name # list your domains;
+
+    location / {
+        proxy_pass http://unix:/path/toyour/maincode/main.sock;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        add_header X-Content-Type-Options "nosniff" always;
+        limit_req zone=mylimit burst=5 nodelay;
+    }
+
+    location /static/ {
+        alias /path/to/your/css-img-png-ico-js-etc-files/static/;
+    }
+# you are bot gonna be able to add this by default. you gotta to install your certificates manually for e.x. by certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kalinux.world-0001/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kalinux.world-0001/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    listen 80;
+    server_name # domains again;
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}

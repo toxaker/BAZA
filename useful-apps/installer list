@@ -1,0 +1,8 @@
+# It keeps and will updating
+## Almost every tool here does not need any setting up to do its job, exceptance is fail2ban, suricata which needs to configure
+  
+    
+        '''
+        sudo apt update
+        sudo apt install lynis chkrootkit rkhunter iptables fail2ban clamav suricata ufw aide auditd linux-privsec-check
+        '''

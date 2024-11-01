@@ -1,0 +1,10 @@
+This is my additional idea to harden security of remote virtual host, server etc
+
+the main idea of this is to create dynamic, scalable, flexible and more modern and effective tool
+
+
+insted of constantly editing iptables rules manually, this class combining python features and iptables flexability
+
+!! I DID NOT TEST IT YET !! 
+
+but i will do, and will update this message

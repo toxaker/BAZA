@@ -1,4 +1,5 @@
-## Unit 1. Firewall via iptables
+# Глава 1. Базовый firewall и способы его настройки.
+## Unit 1. Firewall via iptables.
 
 ### Подготовительные шаги
 

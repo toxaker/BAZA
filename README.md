@@ -1,6 +1,5 @@
 # KALINUX SECURITY
-  For english version [ENG]
-  [https://github.com/toxaker/KALINUX-SECURITY/blob/main/README.md#eng]
+  For english version [ENG](#eng)
 
   ## Моя коллекция базовых, то есть удобных для новичков, доступных и, я бы сказал, необходимых инструментов, функций, настроек, чтобы знать, как.
 

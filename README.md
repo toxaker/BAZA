@@ -1,6 +1,6 @@
-# ITS BAZA
+# KALINUX SECURITY
   
- ## I mean, its possible and i would say required to know how to.
+ ## My collection of basic, i mean, beginner-friendly and available and i would say required tools, features, set ups to know how to.
 
   ### Is it advanced guide from noob guider?
 
